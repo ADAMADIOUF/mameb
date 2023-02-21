@@ -7,7 +7,7 @@ const AddToCart = ({ product }) => {
   return (
     <Wrapper>
       <div className='colors'>
-        <a href=' https://wa.me/2217062556' className='btn-whatsapp'>
+        <a href=' https://wa.me/221777062556' className='btn-whatsapp'>
           <FaWhatsapp />
         </a>
       </div>

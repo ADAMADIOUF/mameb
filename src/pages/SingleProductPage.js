@@ -43,16 +43,15 @@ const SingleProductPage = () => {
     name,
     price,
     desc,
-    id: sku,
     img,
   } = product
 
   return (
     <Wrapper>
       <div className='section section-center page'>
-        <Link to={`/products`} className='btn'>
+        <a href={`/products`} className='btn'>
           retour aux produits
-        </Link>
+        </a>
         <div className='product-center'>
           <ProductImages img={img} />
           <section className='content'>
@@ -61,10 +60,6 @@ const SingleProductPage = () => {
             <h5 className='price'>{formatPrice(price)}</h5>
             <p className='desc'>{desc}</p>
 
-            <p className='info'>
-              <span>SKU:</span>
-              {sku}
-            </p>
 
             <hr />
             <AddToCart product={product} />

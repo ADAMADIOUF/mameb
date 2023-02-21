@@ -30,9 +30,9 @@ const FeaturedProducts = () => {
           return <Product key={product.id} {...product} />
         })}
       </div>
-      <Link to={`/products`} className='btn'>
+      <a href={`/products`} className='btn'>
         tous les produits
-      </Link>
+      </a>
     </Wrapper>
   )
 }
@@ -55,6 +55,7 @@ const Wrapper = styled.section`
     background:var(--clr-primary-3);
     color:#fff;
   }
+  
   @media (min-width: 576px) {
     .featured {
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));

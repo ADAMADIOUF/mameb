@@ -7,6 +7,24 @@ import { Link } from 'react-router-dom'
 import Animates from './Animates'
 
 const Navbar = () => {
+
+  const [scrolled, setScrolled] = useState(false)
+  const handleScroll = () => {
+    const offset = window.scrollY
+    if (offset > 200) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  })
+  let navbarClasses = ['navbar']
+  if (scrolled) {
+    navbarClasses.push('scrolled')
+  }
   const [showLinks, setShowLinks] = useState(false)
   const linksContainerRef = useRef(null)
   const linksRef = useRef(null)
@@ -23,46 +41,58 @@ const Navbar = () => {
   }, [showLinks])
   return (
     <Div>
-      <nav>
-        <div className='nav-center'>
-          <div className='nav-header'>
-            <Link to={`/`}>
-              <img src={logo} alt='' className='logo' />
-              <h3 className='logo-title'>mame doussou</h3>
-            </Link>
-            <button className='nav-toggle' onClick={toggleLinks}>
-              <FaBars />
-            </button>
-          </div>
-          <div className='links-container' ref={linksContainerRef}>
-            <ul className='links' ref={linksRef}>
-              {links.map((link) => {
-                const { id, url, text } = link
+      <header className={navbarClasses.join(' ')}>
+        <nav>
+          <div className='nav-center'>
+            <div className='nav-header'>
+              <a href={`/`}>
+                <img src={logo} alt='' className='logo' />
+              </a>
+              <button className='nav-toggle' onClick={toggleLinks}>
+                <FaBars />
+              </button>
+            </div>
+            <div className='links-container' ref={linksContainerRef}>
+              <ul className='links' ref={linksRef}>
+                {links.map((link) => {
+                  const { id, url, text } = link
+                  return (
+                    <li key={id}>
+                      <a href={url}>{text}</a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+            <ul className='social-icons'>
+              {social.map((socialIcon) => {
+                const { id, url, icon } = socialIcon
                 return (
                   <li key={id}>
-                    <a href={url}>{text}</a>
+                    <a href={url}>{icon}</a>
                   </li>
                 )
               })}
             </ul>
           </div>
-          <ul className='social-icons'>
-            {social.map((socialIcon) => {
-              const { id, url, icon } = socialIcon
-              return (
-                <li key={id}>
-                  <a href={url}>{icon}</a>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </nav>
-      <Animates/>
+        </nav>
+        <Animates />
+      </header>
     </Div>
   )
 }
 const Div = styled.section`
+  .scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background: var(--clr-black);
+    z-index: 1000;
+    box-shadow: var(--light-shadow);
+    border-bottom: 1px solid var(--clr-secondary);
+  }
   nav {
     background: var(--clr-white);
     box-shadow: var(--light-shadow);
@@ -86,11 +116,13 @@ const Div = styled.section`
     transform: rotate(90deg);
   }
   .logo {
-    height: 60px;
+    width:10rem;
+
   }
-  .logo-title{
-    color:var(--clr-primary-3)
-  } .links a {
+  .logo-title {
+    color: var(--clr-primary-3);
+  }
+  .links a {
     color: var(--clr-black);
     font-size: 1rem;
     text-transform: capitalize;

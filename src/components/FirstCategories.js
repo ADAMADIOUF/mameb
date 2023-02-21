@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styled from 'styled-components'
 import img1 from "../assets/valeur1.png"
 import img2 from '../assets/chicken.png'
@@ -6,18 +6,27 @@ import img3 from '../assets/duck.png'
 import img4 from '../assets/pigeon.png'
 import img5 from '../assets/rabbit.png'
 
-
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 const FirstCategories = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 1000,
+      delay: 50,
+      easing: 'ease-in-out',
+    })
+  }, [])
   return (
     <Wrapper>
       <div className='firscategories'>
-        <img src={img1} alt='' />
+        <img src={img1} alt='' data-aos='fade-up' />
         <div className='firstcategories-details'>
           <h3>
-            <span>GOÛTEZ À LA SAVEUR DU TERROIRCHEZ</span> CHEZ MAME DOUSSO
+            <span data-aos='fade-up'>GOÛTEZ À LA SAVEUR DU TERROIRCHEZ</span>{' '}
+            CHEZ MAME DOUSSO
           </h3>
-          <p>
+          <p data-aos='fade-right'>
             C’est avec un immense plaisir que je vous invite à découvrir ma
             production de volailles et de foie gras. J’élève dans ma ferme,des
             chèvres ,des moutons ,des canards,des poulets, et des pintades,des
@@ -29,19 +38,19 @@ const FirstCategories = () => {
           </p>
         </div>
         <div className='firstcategories-container'>
-          <article>
+          <article data-aos='fade-up'>
             <img src={img2} alt='' />
             <h3>Poulet</h3>
           </article>
-          <article>
+          <article data-aos='fade-right'>
             <img src={img3} alt='' />
             <h3>Canard</h3>
           </article>
-          <article>
+          <article data-aos='fade-up'>
             <img src={img4} alt='' />
             <h3>Pigeon</h3>
           </article>
-          <article>
+          <article data-aos='fade-right'>
             <img src={img5} alt='' />
             <h3>Lapin</h3>
           </article>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styled from 'styled-components'
 import img1 from '../assets/v1.png'
 import img2 from '../assets/v2.png'
@@ -9,32 +9,42 @@ import img6 from '../assets/c1.png'
 import img7 from '../assets/c2.png'
 
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 const SecondCategories = () => {
+   useEffect(() => {
+     AOS.init({
+       offset: 200,
+       duration: 1000,
+       delay: 50,
+       easing: 'ease-in-out',
+     })
+   }, [])
   return (
     <Wrapper>
       <div className='secondcategories'>
         <div className='secondcategories-container'>
-          <article className='f1'>
+          <article data-aos='fade-up' className='f1'>
             <img src={img1} alt='' />
           </article>
-          <article className='f2'>
+          <article data-aos='fade-up' className='f2'>
             <img src={img2} alt='' />
           </article>
-          <article className='f3'>
+          <article data-aos='fade-up' className='f3'>
             <img src={img3} alt='' />
           </article>
-          <article className='f4'>
+          <article data-aos='fade-up' className='f4'>
             <img src={img4} alt='' />
           </article>
-          <article className='f5'>
+          <article data-aos='fade-up' className='f5'>
             <img src={img5} alt='' />
           </article>
         </div>
         <div className='secondcategories-container-deux'>
-          <article>
+          <article data-aos='fade-right'>
             <img src={img6} alt='' />
           </article>
-          <article>
+          <article data-aos='fade-up'>
             <img src={img7} alt='' />
           </article>
         </div>

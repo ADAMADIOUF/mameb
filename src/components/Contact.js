@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Cimg1 from '../assets/contact1.jpeg'
+import Cimg1 from '../assets/contact1.png'
 import Cimg2 from '../assets/contact11.png'
 import Cimg3 from '../assets/contact22.png'
 
@@ -40,6 +40,9 @@ const Contact = () => {
   )
 }
 const Wrapper = styled.section`
+.contact{
+  margin-top:5rem;
+}
   .contact img {
     width: 100%;
   }

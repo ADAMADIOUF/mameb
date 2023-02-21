@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import b1 from '../assets/b1.jpeg'
+import b1 from '../assets/b1.png'
 
 const ThirthCategories = () => {
   return (
@@ -45,23 +45,19 @@ const ThirthCategories = () => {
               plastique reste également très compétitif.
             </p>
           </article>
-          <article>
-           <img src={b1} alt="" className='img-third' />
-          </article>
         </div>
-      
+        <article>
+          <img src={b1} alt='' className='img-third' />
+        </article>
       </div>
     </Wrapper>
   )
 }
 const Wrapper = styled.section`
   .img-third {
-    width: 300px;
+    width: 100%;
   }
-  @media (min-width: 902px) {
-    .img-third {
-      width: 600px;
-    }
-  }
+
+  
 `
 export default ThirthCategories

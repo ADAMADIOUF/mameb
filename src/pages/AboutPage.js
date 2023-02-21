@@ -1,14 +1,13 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
 import A1 from '../assets/tes-b.png'
-import img1 from '../assets/about1.webp'
-import img2 from '../assets/p.jpeg'
-import pimg from '../assets/p1.jpeg'
-import pimg2 from '../assets/p2.jpeg'
-import about1 from '../assets/about1.png'
-import about2 from '../assets/about2.png'
-import about3 from '../assets/about3.png'
-import about4 from '../assets/about4.png'
+import img1 from '../assets/about1.png'
+import img2 from '../assets/about2.png'
+import pimg from '../assets/p1.png'
+import about1 from '../assets/md1.png'
+import about2 from '../assets/md2.png'
+import about3 from '../assets/md3.png'
+import about4 from '../assets/md4.png'
 import Question from '../components/Question'
 import data from '../dataQuestion'
 const AboutPage = () => {
@@ -115,7 +114,7 @@ const AboutPage = () => {
               <img src={pimg} alt='' className='p-img2' />
             </article>
           </div>
-          <img src={pimg2} alt='' className='p-img' />
+         
         </div>
         <div className='section-center questions'>
           <h4>questions & reponses</h4>
@@ -153,7 +152,7 @@ const AboutPage = () => {
 }
 const Wrapper = styled.section`
   .about-first-img {
-    width: 300px;
+    width: 100%;
 margin-top:5rem;
     
   }
@@ -170,7 +169,7 @@ margin-top:5rem;
     font-size: 2rem;
   }
   .img-about {
-    width: 300px;
+    width: 100%;
   }
   .container-about {
     margin-top:5rem;
@@ -206,11 +205,7 @@ margin-top:5rem;
     .p-img{
       width:500px
     }
-    .about-first-img {
-      width:700px;
-      display:block;
-      margin:0 auto
-      }
+    
   .avantages {
     margin: 0.5rem;
     cursor: pointer;

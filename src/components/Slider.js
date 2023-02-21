@@ -65,7 +65,7 @@ const Wrapper = styled.section`
   .slide {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     text-align: center;
@@ -103,9 +103,7 @@ const Wrapper = styled.section`
       width: 100%;
       height: 100vh;
     }
-    .slide {
-      height: 800px;
-    }
+    
    
   }
 `
